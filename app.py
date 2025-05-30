@@ -18,4 +18,4 @@ if __name__ == '__main__':
     O servidor é iniciado em modo de debug para facilitar o desenvolvimento,
     com host definido como 0.0.0.0 para permitir acesso externo.
     """
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=False, host='0.0.0.0')

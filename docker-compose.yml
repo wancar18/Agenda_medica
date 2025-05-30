@@ -1,0 +1,32 @@
+services:
+  agenda_app:
+    build: .
+    container_name: agenda_medica_app
+    ports:
+      - "5000:5000"
+    environment:
+      DB_HOST: db
+      DB_USER: user_agenda
+      DB_PASSWORD: super_secret_password
+      DB_NAME: agenda_db
+      FLASK_ENV: development
+      FLASK_DEBUG: 1
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+  db:
+    image: mysql:8.0
+    container_name: agenda_medica_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: agenda_db
+      MYSQL_USER: user_agenda
+      MYSQL_PASSWORD: super_secret_password
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  db_data:

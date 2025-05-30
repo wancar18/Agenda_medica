@@ -2,16 +2,16 @@
 Arquivo de configuração do sistema de agendamento médico.
 Contém constantes e configurações globais utilizadas em todo o sistema.
 """
-
+import os
 # Configurações do Flask
 SECRET_KEY = 'chavesecreta123'  # Chave secreta para gerenciamento de sessão
 
 # Configurações do banco de dados
 DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': '1234',
-    'database': 'agendador_medico'
+    'host': os.environ.get('DB_HOST'),
+    'user': os.environ.get('DB_USER'),
+    'password': os.environ.get('DB_PASSWORD'),
+    'database': os.environ.get('DB_NAME')
 }
 
 # Credenciais de acesso ao sistema administrativo
