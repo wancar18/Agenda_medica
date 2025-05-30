@@ -2,6 +2,22 @@
 
 Este guia fornece instruções passo a passo para configurar e executar o Sistema de Agendamento Médico em uma nova máquina.
 
+Se optar em usar Docker:
+
+## Pré-requisitos
+- Docker instalado
+
+Passo 1: Clonar o Git
+- git clone https://github.com/seu-usuario/agendador-medico.git
+
+Passo 2: Rodar o Docker
+- executar no terminal estando na pasta raiz do projeto o comando: docker-compose up
+
+Passo 3: Abrir navegador
+- abrir navegador e digitar na barra de endereço: http://127.0.0.1:5000/ OU LOCALHOST:5000
+
+## PARA RODAR LOCALMENTE COM INSTALAÇÕES E DEPENDENCIAS ##
+
 ## Pré-requisitos
 
 - Python 3.8 ou superior
